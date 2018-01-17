@@ -27,7 +27,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function articles(){
+    public function articles()
+    {
         return $this->hasMany('App\Article', 'user_id');
-}
+    }
+
+    public function generateToken(){
+        do {
+            $api_token = str_random(32);
+        } while (User::where("api_token", "=", $api_token)->first() instanceof User);
+        $this->api_token = $api_token;
+        $this->update();
+        return $this->api_token;
+    }
 }
