@@ -4,4 +4,6 @@
 `Registration` `Login` `Logout` `ForgotPassword`
 `Articles` `Users`
 
-Good scaffolding for Mobile REST API
+**Good scaffolding for Mobile REST API.**
+
+__Postman collection for test endpoints
